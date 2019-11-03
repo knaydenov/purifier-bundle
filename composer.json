@@ -1,6 +1,6 @@
 {
     "name": "kna/purifier-bundle",
-    "description": "Itegrates HTML Purifier into Symfony",
+    "description": "This bundle integrates HTML Purifier into Symfony",
     "type": "symfony-bundle",
     "require": {
         "php": "^7.1.3",
