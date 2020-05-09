@@ -13,8 +13,13 @@ class Serializer extends \HTMLPurifier_DefinitionCache_Serializer
      */
     public function generateKey($config): string
     {
-        return $config->version . ',' . // possibly replace with function calls
-            $config->get($this->type . '.DefinitionID') . ',' .
-            $config->get($this->type . '.DefinitionRev');
+        switch ($this->type) {
+            case 'HTML':
+                return $config->version . ',' . $config->get($this->type . '.DefinitionID') . ',' . $config->get($this->type . '.DefinitionRev');
+            case 'CSS':
+                return $config->version . ',' . $config->get($this->type . '.DefinitionRev');
+            default:
+                throw new \LogicException('This code should not be reached!');
+        }
     }
 }
