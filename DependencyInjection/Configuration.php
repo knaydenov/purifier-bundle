@@ -16,8 +16,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('kna_purifier');
+        $treeBuilder = new TreeBuilder('kna_purifier');
+        $root = $treeBuilder->getRootNode();
 
         $this->addCommonSection($root);
 
